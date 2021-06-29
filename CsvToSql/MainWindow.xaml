@@ -7,11 +7,10 @@
         mc:Ignorable="d"
         Title="Csv to sql insert" Height="202" Width="492">
     <Grid>
-        <Button x:Name="button" Content=" Generuj " HorizontalAlignment="Left" Margin="268,9,0,0" VerticalAlignment="Top" Click="button_Click" />
+        <Button x:Name="button" Content=" Generuj " HorizontalAlignment="Left" Margin="268,9,0,0" VerticalAlignment="Top" Click="Generate" />
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="10,33,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="453" Height="118" />
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="10,10,0,0" Text="nazwa_tabeli" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <Button x:Name="button1" Content="  ?  " HorizontalAlignment="Left" Margin="440,8,0,0" VerticalAlignment="Top" Cursor="Help" Foreground="Red"/>
-        <Button x:Name="button2" Content=" Kopiuj do schowka " HorizontalAlignment="Left" Margin="325,9,0,0" VerticalAlignment="Top" IsEnabled="False" Click="button2_Click"/>
-
+        <TextBox x:Name="tableBox" HorizontalAlignment="Left" Margin="10,10,0,0" Text="nazwa_tabeli" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <Button x:Name="button1" Content="  ?  " HorizontalAlignment="Left" Margin="440,8,0,0" VerticalAlignment="Top" Cursor="Help" Foreground="Red" Click="OpenHelpWindow" />
+        <Button x:Name="CopyToClipboardButton" Content=" Kopiuj do schowka " HorizontalAlignment="Left" Margin="325,9,0,0" VerticalAlignment="Top" IsEnabled="False" Click="CopyToClipboard" />
     </Grid>
 </Window>

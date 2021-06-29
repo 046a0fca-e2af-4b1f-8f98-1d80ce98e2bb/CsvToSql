@@ -1,0 +1,12 @@
+﻿<Window x:Class="CsvToSql.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CsvToSql"
+        mc:Ignorable="d"
+        Title="Pomoc" Height="119" Width="286">
+    <Grid>
+        <Label x:Name="label" Content="Program generuje INSERTy do bazy SQL&#xA;na podstawie pliku .CSV.&#xA;Nalezy pamiętać, że pierwszy wiersz&#xA;w pliku to nazwy kolumny." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="88" Width="231" />
+    </Grid>
+</Window>

@@ -32,7 +32,7 @@ namespace CsvToSql
         private string CsvToSql(string csv)
         {
             string head = csv.Substring(0, csv.IndexOf(Environment.NewLine));
-            head = "'" + head.Replace(";", "','") + "'";
+            head = head.Replace(";", ",");
             csv = csv.Substring(csv.IndexOf(Environment.NewLine));
             string[] builder = csv.Split(Environment.NewLine);
             string final = "";
@@ -40,13 +40,13 @@ namespace CsvToSql
             {
                 if (item != "")
                 {
-                    final = final + "INSERT INTO " + textBox1.Text + " (" + head + ")" + " VALUES('" + item.Replace(";", "','") + "');" + Environment.NewLine;
+                    final = final + "INSERT INTO " + tableBox.Text + " (" + head + ")" + " VALUES('" + item.Replace(";", "','") + "');" + Environment.NewLine;
                 }
             }
             return final;
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void Generate(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Filter = "(*.csv)|*.csv|Wszystkie (*.*)|*.*";
@@ -55,13 +55,19 @@ namespace CsvToSql
             {
                 csvfile = File.ReadAllText(openFile.FileName);
                 textBox.Text = CsvToSql(csvfile);
-                button2.IsEnabled = true;
+                CopyToClipboardButton.IsEnabled = true;
             }
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        private void CopyToClipboard(object sender, RoutedEventArgs e)
         {
             Clipboard.SetText(textBox.Text);
+        }
+
+        private void OpenHelpWindow(object sender, RoutedEventArgs e)
+        {
+            HelpWindow helpWindow = new HelpWindow();
+            helpWindow.Show();
         }
     }
 }
